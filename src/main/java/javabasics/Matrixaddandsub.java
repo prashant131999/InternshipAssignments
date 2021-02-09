@@ -1,14 +1,15 @@
-package assignment;
+package javabasics;
 
 import java.util.Scanner;
 
 public class Matrixaddandsub {
     /**
+     * this method  will print addition of mat1 and mat2
      * @param mat1 1st matrix to add
      * @param mat2 2nd matrix to add
      * @param row  number of rows in the matrix
      * @param col  number of cols in the matrix
-     *             it will print addition of mat1 and mat2
+     *
      */
     public static void addition(int mat1[][], int mat2[][], int row, int col) {
         int[][] res = new int[row][col];
@@ -27,6 +28,13 @@ public class Matrixaddandsub {
 
     }
 
+    /**
+     * this method  will print addition of mat1 and mat2
+     * @param mat1 1st matrix to subtract
+     * @param mat2 2nd matrix to subtract
+     * @param row  number of rows in matrix
+     * @param col  number of cols in matrix
+     */
     public static void subtraction(int mat1[][], int mat2[][], int row, int col) {
         int[][] res = new int[row][col];
         for (int i = 0; i < row; i++) {

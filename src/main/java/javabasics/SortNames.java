@@ -1,4 +1,4 @@
-package assignment;
+package javabasics;
 
 import java.util.Scanner;
 

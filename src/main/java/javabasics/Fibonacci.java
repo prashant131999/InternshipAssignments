@@ -1,4 +1,4 @@
-package assignment;
+package javabasics;
 
 import java.util.Scanner;
 
@@ -6,9 +6,11 @@ import java.util.Scanner;
  * this class contain fibonacci method to print fibonacci
  */
 public class Fibonacci {
-    /**
+
+
+    /** this method  prints finobaci series starting from 1
      * @param num is the value upto which we print fibbonaci series
-     *            this function prints finobaci series starting from 1
+     *
      */
 
     public static void fibonacci(int num) {

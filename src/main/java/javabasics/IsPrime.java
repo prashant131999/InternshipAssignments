@@ -1,11 +1,11 @@
-package assignment;
+package javabasics;
 import java.util.Scanner;
 //check method to check number for prime
 public class IsPrime {
-    /**
+    /** this method prints whether num is prime or not
      *
      * @param num is to check this number for prime
-     *            this method prints whether num is prime or not
+     *
      */
     public static void check(int num)
     {

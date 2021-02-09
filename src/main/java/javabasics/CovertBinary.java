@@ -1,14 +1,14 @@
-package assignment;
+package javabasics;
 import java.util.Scanner;
 
 /**
  * this class contain method convertdectobin which converts decimal to binary
  */
 public class CovertBinary {
-    /**
+    /** this method print the binary of given decimal number
      *
      * @param num to convert the given num to binary
-     *            this method print the binary of given decimal number
+     *            t
      */
     public static void convertdectobin(int num)
     {
