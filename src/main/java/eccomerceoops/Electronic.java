@@ -19,13 +19,13 @@ public class Electronic extends Ecommerce{
                 "Weight: "+get_weight()+"\n"+
                 "Description: "+get_description());
     }
-    public int GetTax(){
+    public float GetTax(){
         return salestax;
     }
     public void SetTax(int t){
         salestax=t;
     }
-    public double GetShipping(){
+    public float GetShipping(){
         return shippingcost*get_weight();
 
     }
@@ -36,8 +36,8 @@ public class Electronic extends Ecommerce{
     {
         return quantity;
     }
-    public double GetTotalPrice(){
-        return (get_price() + (salestax/100.0)*(get_price()) + shippingcost*get_weight())*quantity;
+    public float GetTotalPrice(){
+        return (float) ((get_price() + (salestax/100.0)*(get_price()) + shippingcost*get_weight())*quantity);
     }
 
 }
