@@ -3,7 +3,9 @@ package javabasics;
 import java.util.Scanner;
 
 public class SumOfDigits {
-    /** this method return sum of digits
+    /**
+     * this method return sum of digits
+     *
      * @param num is a number for which we find sum of digits
      * @return sum of digits of number given by user
      */

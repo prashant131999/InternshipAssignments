@@ -1,11 +1,12 @@
 package javabasics;
+
 import java.util.Scanner;
 
 public class NumberTable {
-    /** this method prints the table of given num
+    /**
+     * this method prints the table of given num
      *
      * @param num to print table for num
-     *
      */
     public static void printtable(int num) {
         for (int i = 1; i <= 10; i++) {

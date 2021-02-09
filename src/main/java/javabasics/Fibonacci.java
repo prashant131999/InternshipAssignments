@@ -8,9 +8,10 @@ import java.util.Scanner;
 public class Fibonacci {
 
 
-    /** this method  prints finobaci series starting from 1
-     * @param num is the value upto which we print fibbonaci series
+    /**
+     * this method  prints finobaci series starting from 1
      *
+     * @param num is the value upto which we print fibbonaci series
      */
 
     public static void fibonacci(int num) {
