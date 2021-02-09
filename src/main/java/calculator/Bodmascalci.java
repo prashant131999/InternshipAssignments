@@ -1,4 +1,4 @@
-package assignment1;
+package calculator;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -7,7 +7,8 @@ import java.util.Stack;
  * calculation method takes one operator as an input and apply it between two num
  */
 class Bodmascalci {
-    /**
+    /**This method makes calculation between two number on given operator
+     *
      * @param oper parameter for operator on which operation is performed
      * @param num2 second number from the stack for calculation
      * @param num1 first number  from stack for calculation
@@ -28,9 +29,10 @@ class Bodmascalci {
     }
 
     /**
+     * this method check the precedence and return true if there is precedence
      * @param oper_1 comes from question char array
      * @param oper_2 comes from stack of operations
-     *               this method check the precedence and return true if there is precedence
+     *
      * @return the true or false
      */
     public static boolean hasPrecedence(char oper_1, char oper_2) {
@@ -42,9 +44,10 @@ class Bodmascalci {
             return true;
     }
 
-    /**
+    /** this method solves the string given by user using two stacks and return the output
+     *
      * @param question takes the input from the user and does the calculation
-     *                 this method uses two stacks one for numbers and one for operator
+     *
      * @return the output after calculation on the given question
      */
     public static int solve(String question) {
