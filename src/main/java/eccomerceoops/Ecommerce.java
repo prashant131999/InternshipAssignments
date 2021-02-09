@@ -20,32 +20,23 @@ public class Ecommerce {
 
 
 
-    public  void prompts ()
-    {
-        System.out.println(name);
-        System.out.println(baseprice);
-        System.out.println(description);
+    public String get_name(){
+        return name;
     }
-    public int totalprice( )
-    {
-        System.out.println(totalcost);
+    public int get_price(){
+        return baseprice;
     }
-    public void inventorylineitem()
-    {
-     System.out.println("inventory");
-     System.out.println(baseprice);
-     System.out.println(name);
-     System.out.println(weight);
+    public float get_weight(){
+        return weight;
     }
-    public void receipt()
-    {
-        System.out.println("Receipt");
-        System.out.println(name);
-        System.out.println(baseprice);
-        System.out.println(salestax);
-        System.out.println(shippingcost);
-        System.out.println(totalcost);
+    public String get_description(){
+        return description;
     }
-
+    public void promptsinfo(){
+        System.out.println("Name of product: "+name+"\n"+
+                "Base_Price: "+baseprice+"\n"+
+                "Weight: "+weight+"\n"+
+                "Description: "+description) ;
+    }
 
 }
