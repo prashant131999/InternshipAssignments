@@ -1,3 +1,4 @@
+package assignment1;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -7,10 +8,10 @@ import java.util.Stack;
  */
 class Bodmascalci {
     /**
-     * @param oper parameter for operator
-     * @param num2 second number for calculation
-     * @param num1 first number for calculation
-     * @return
+     * @param oper parameter for operator on which operation is performed
+     * @param num2 second number from the stack for calculation
+     * @param num1 first number  from stack for calculation
+     * @return the output after the operation between two operator.
      */
     public static int calculation(char oper, int num2, int num1) {
         switch (oper) {
@@ -29,6 +30,7 @@ class Bodmascalci {
     /**
      * @param oper_1 comes from question char array
      * @param oper_2 comes from stack of operations
+     *               this method check the precedence and return true if there is precedence
      * @return the true or false
      */
     public static boolean hasPrecedence(char oper_1, char oper_2) {
@@ -41,8 +43,9 @@ class Bodmascalci {
     }
 
     /**
-     * @param question takes the string as input from user
-     * @return the output after calculation
+     * @param question takes the input from the user and does the calculation
+     *                 this method uses two stacks one for numbers and one for operator
+     * @return the output after calculation on the given question
      */
     public static int solve(String question) {
         int flag = 0;
