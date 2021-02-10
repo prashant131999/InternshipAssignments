@@ -1,36 +1,38 @@
 package eccomerceoops;
 
-public class Books extends Ecommerce {
-    private float salestax;
-    private float shippingcost;
-    private float totalcost;
+public class Books extends Product {
+    private float salesTax;
+    private float shippingCost;
+    private float totalCost;
     private int quantity;
 
     /**
      * This is a constructor used  for initialize the parameter given by user
      *
      * @param name         for name of product
-     * @param baseprice    for baseprice of product
+     * @param basePrice    for baseprice of product
      * @param description  for decription of product
      * @param weight       for weight of product
-     * @param salestax     for salestax of product
-     * @param shippingcost for shiping charges of product
+     * @param salesTax     for salestax of product
+     * @param shippingCost for shiping charges of product
      */
-    public Books(String name, int baseprice, String description, float weight, float salestax, float shippingcost) {
-        super(name, baseprice, description, weight);
-        this.salestax = salestax;
-        this.shippingcost = shippingcost;
-        this.totalcost = salestax + shippingcost + baseprice;
+    public Books(String name, int basePrice, String description, float weight, float salesTax, float shippingCost
+    ,int quantity) {
+        super(name, basePrice, description, weight);
+        this.salesTax = salesTax;
+        this.shippingCost = shippingCost;
+        this.quantity=quantity;
+        this.totalCost = salesTax + shippingCost + basePrice;
     }
 
     /**
      * This method prints the information about product
      */
     public void promptsinfo() {
-        System.out.println("Name of product: " + get_name() + "\n" +
-                "Base_Price: " + get_price() + "\n" +
-                "Weight: " + get_weight() + "\n" +
-                "Description: " + get_description());
+        System.out.println("Name of product: " + getName() + "\n" +
+                "Base_Price: " + getPrice() + "\n" +
+                "Weight: " + getWeight() + "\n" +
+                "Description: " + getDescription());
     }
 
     /**
@@ -39,7 +41,7 @@ public class Books extends Ecommerce {
      * @return total price
      */
     public float GetTotalPrice() {
-        return (float) ((get_price() + (salestax / 100.0) * (get_price()) + shippingcost * get_weight()) * quantity);
+        return (float) ((getPrice() + (salesTax / 100.0) * (getPrice()) + shippingCost * getWeight()) * quantity);
     }
 
     /**
@@ -48,15 +50,15 @@ public class Books extends Ecommerce {
      * @return salestax
      */
     public float GetTax() {
-        return salestax;
+        return salesTax;
     }
 
     public void SetTax(int t) {
-        salestax = t;
+        salesTax = t;
     }
 
     public float GetShipping() {
-        return shippingcost * get_weight();
+        return shippingCost * getWeight();
 
     }
 
@@ -66,7 +68,7 @@ public class Books extends Ecommerce {
      * @param s take shoping cost from user
      */
     public void SetShipping(int s) {
-        shippingcost = s;
+        shippingCost = s;
     }
 
     /**

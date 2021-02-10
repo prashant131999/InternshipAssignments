@@ -1,26 +1,23 @@
 package eccomerceoops;
 
-public class Ecommerce {
+public class Product {
     protected String name;
-    protected int baseprice;
+    protected int basePrice;
     protected String description;
     // weight is in kg
     protected float weight;
-    protected float salestax;
-    protected float shippingcost;
-    protected float totalcost;
 
     /**
      * This constructor initialize name,baseprice,description and weight given by user
      *
      * @param name        for product name
-     * @param baseprice   for baseprice of product
+     * @param basePrice   for baseprice of product
      * @param description for description of product
      * @param weight      for weight of product
      */
-    public Ecommerce(String name, int baseprice, String description, float weight) {
+    public Product(String name, int basePrice, String description, float weight) {
         this.name = name;
-        this.baseprice = baseprice;
+        this.basePrice = basePrice;
         this.description = description;
         this.weight = weight;
 
@@ -32,7 +29,7 @@ public class Ecommerce {
      * @return name of product
      */
 
-    public String get_name() {
+    public String getName() {
         return name;
     }
 
@@ -41,8 +38,8 @@ public class Ecommerce {
      *
      * @return base price
      */
-    public int get_price() {
-        return baseprice;
+    public int getPrice() {
+        return basePrice;
     }
 
     /**
@@ -50,7 +47,7 @@ public class Ecommerce {
      *
      * @return weight
      */
-    public float get_weight() {
+    public float getWeight() {
         return weight;
     }
 
@@ -59,7 +56,7 @@ public class Ecommerce {
      *
      * @return description
      */
-    public String get_description() {
+    public String getDescription() {
         return description;
     }
 
@@ -68,7 +65,7 @@ public class Ecommerce {
      */
     public void promptsinfo() {
         System.out.println("Name of product: " + name + "\n" +
-                "Base_Price: " + baseprice + "\n" +
+                "Base_Price: " + basePrice + "\n" +
                 "Weight: " + weight + "\n" +
                 "Description: " + description);
     }

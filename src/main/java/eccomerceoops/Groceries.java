@@ -1,6 +1,6 @@
 package eccomerceoops;
 
-public class Petshop extends Product {
+public class Groceries extends Product {
     private float salesTax;
     private float shippingCost;
     private float totalCost;
@@ -16,8 +16,8 @@ public class Petshop extends Product {
      * @param salesTax     for salestax of product
      * @param shippingCost for shiping charges of product
      */
-    public Petshop(String name, int basePrice, String description, float weight, float salesTax,
-                   float shippingCost,int quantity) {
+    public Groceries(String name, int basePrice, String description, float weight, float salesTax
+                     ,float shippingCost,int quantity) {
         super(name, basePrice, description, weight);
         this.salesTax = salesTax;
         this.shippingCost = shippingCost;
