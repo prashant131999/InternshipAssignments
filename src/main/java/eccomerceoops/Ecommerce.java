@@ -9,34 +9,68 @@ public class Ecommerce {
     protected float salestax;
     protected float shippingcost;
     protected float totalcost;
-    public Ecommerce(String name,int baseprice,String description,float weight)
-    {
-        this.name=name;
-        this.baseprice=baseprice;
-        this.description=description;
-        this.weight=weight;
+
+    /**
+     * This constructor initialize name,baseprice,description and weight given by user
+     *
+     * @param name        for product name
+     * @param baseprice   for baseprice of product
+     * @param description for description of product
+     * @param weight      for weight of product
+     */
+    public Ecommerce(String name, int baseprice, String description, float weight) {
+        this.name = name;
+        this.baseprice = baseprice;
+        this.description = description;
+        this.weight = weight;
 
     }
 
+    /**
+     * This method return the name of product
+     *
+     * @return name of product
+     */
 
-
-    public String get_name(){
+    public String get_name() {
         return name;
     }
-    public int get_price(){
+
+    /**
+     * This method return the base price of product given by user
+     *
+     * @return base price
+     */
+    public int get_price() {
         return baseprice;
     }
-    public float get_weight(){
+
+    /**
+     * This method return the weight given by user
+     *
+     * @return weight
+     */
+    public float get_weight() {
         return weight;
     }
-    public String get_description(){
+
+    /**
+     * This method return the description of product given by user
+     *
+     * @return description
+     */
+    public String get_description() {
         return description;
     }
-    public void promptsinfo(){
-        System.out.println("Name of product: "+name+"\n"+
-                "Base_Price: "+baseprice+"\n"+
-                "Weight: "+weight+"\n"+
-                "Description: "+description) ;
+
+    /**
+     * This method prints the information about product
+     */
+    public void promptsinfo() {
+        System.out.println("Name of product: " + name + "\n" +
+                "Base_Price: " + baseprice + "\n" +
+                "Weight: " + weight + "\n" +
+                "Description: " + description);
     }
 
 }
