@@ -6,6 +6,10 @@ public class Product {
     protected String description;
     // weight is in kg
     protected float weight;
+    protected float salesTax;
+    protected float shippingCost;
+    protected float totalCost;
+    protected int quantity;
 
     /**
      * This constructor initialize name,baseprice,description and weight given by user
@@ -15,12 +19,24 @@ public class Product {
      * @param description for description of product
      * @param weight      for weight of product
      */
-    public Product(String name, int basePrice, String description, float weight) {
+    public Product(String name, int basePrice, String description, float weight, float salesTax,
+                   float shippingCost, int quantity) {
         this.name = name;
         this.basePrice = basePrice;
         this.description = description;
         this.weight = weight;
+        this.salesTax = salesTax;
+        this.shippingCost = shippingCost;
+        this.quantity = quantity;
+    }
 
+    /**
+     * This method return the total price of product after including every taxes
+     *
+     * @return final cost
+     */
+    public float GetTotalPrice() {
+        return (float) ((getPrice() + (salesTax / 100.0) * (getPrice()) + shippingCost * getWeight()) * quantity);
     }
 
     /**
@@ -69,5 +85,37 @@ public class Product {
                 "Weight: " + weight + "\n" +
                 "Description: " + description);
     }
+
+    /**
+     * This method used to get salestax from user
+     *
+     * @return salestax
+     */
+    public float GetTax() {
+        return salesTax;
+    }
+
+
+    /**
+     * This method returns the shipping cost of product
+     *
+     * @return shipping cost
+     */
+    public float GetShipping() {
+        return shippingCost * getWeight();
+
+    }
+
+
+    /**
+     * This method returns the quantity
+     *
+     * @return the quantity
+     */
+
+    public int GetQuantity() {
+        return quantity;
+    }
+
 
 }
