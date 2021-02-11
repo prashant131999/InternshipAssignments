@@ -6,15 +6,28 @@ import java.util.HashMap;
 
 import java.util.ArrayList;
 
+import java.lang.Math;
+
 
 public class Dictionary {
 
-
+    /** This method insert the word with their meaning in dictionary
+     *
+     * @param dict takes dictionary hashmap from user to insert input
+     * @param word takes input from user
+     * @param description takes input from description
+     */
     public static void insert(HashMap<String,String>dict,String word,String description)
     {
      dict.put(word,description);
 
     }
+
+    /**
+     * This method search the meaning of given word
+     * @param dict takes dictionary hashmap from user
+     * @param word  takes word from user
+     */
     public static void search(HashMap<String,String>dict,String word)
     {
         if(dict.containsKey(word))
@@ -27,6 +40,13 @@ public class Dictionary {
             System.out.println("Word is not present in dictionary\n......");
         }
     }
+
+    /** This method returns all the list of matching complete words
+     *  from the input of user
+     * @param dict takes dictionary hashmap from user
+     * @param incompleteword takes incomplete word from user
+     * @return array lsit of all matching words
+     */
     public static ArrayList<String> autocomplete(HashMap<String,String>dict,String incompleteword)
     {
         String completeWord="No word is starting from these letter found in dictionary";
@@ -63,8 +83,16 @@ public class Dictionary {
         return listOfCorrectWords;
 
     }
+
+    /** This  method corrects the word given by user by searching in the dict hashmap
+     *
+     * @param dict takes dictionary hashmap from user
+     * @param incorrectword takes input from user
+     * @return the correct word
+     */
     public static String autocorrect(HashMap<String,String>dict,String incorrectword)
     {
+        int diff=Integer.MAX_VALUE;
         String correct="Not a single word matches with given words";
         for(String word : dict.keySet())
         {
@@ -81,13 +109,17 @@ public class Dictionary {
             }
             for(int i=0;i< length;i++)
             {
+
                 if(wordarray[i]!=incorrectword.charAt(i))
                 {
                     if(i>0)
                     {
-                        correct=word;
+                        if(Math.abs(incorrectword.length()- wordarray.length)<diff) {
+                            correct = word;
+                            diff=Math.abs(incorrectword.length()- wordarray.length);
+                        }
                     }
-                    break;
+
                 }
 
             }
