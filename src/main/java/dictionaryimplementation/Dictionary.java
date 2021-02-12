@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 
 public class Dictionary {
-    private static Logger logger;
-       static {
+    static Logger logger = Logger.getLogger(Dictionary.class.getPackage().getName());
+    static {
            LogManager manager = LogManager.getLogManager();
            InputStream stream = Dictionary.class.getClassLoader().getResourceAsStream("logging.properties");
            try {
@@ -20,8 +20,6 @@ public class Dictionary {
            } catch (IOException e) {
                e.printStackTrace();
            }
-
-           Logger logger = Logger.getLogger(Dictionary.class.getPackage().getName());
        }
     /**
      * This method insert the word with their meaning in dictionary
