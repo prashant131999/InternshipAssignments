@@ -1,13 +1,26 @@
 package dictionaryimplementation;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.lang.Math;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 
 public class Dictionary {
-
+    static Logger logger = Logger.getLogger(Dictionary.class.getPackage().getName());
+    static {
+           LogManager manager = LogManager.getLogManager();
+           InputStream stream = Dictionary.class.getClassLoader().getResourceAsStream("logging.properties");
+           try {
+               manager.readConfiguration(stream);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
     /**
      * This method insert the word with their meaning in dictionary
      *
@@ -29,9 +42,9 @@ public class Dictionary {
     public static void search(HashMap<String, String> dict, String word) {
         if (dict.containsKey(word)) {
             String meaning = dict.get(word);
-            System.out.println("Meaning of searched word " + word + " " + "is" + " " + meaning + "\n.....");
+            logger.info("Meaning of searched word " + word + " " + "is" + " " + meaning + "\n.....");
         } else {
-            System.out.println("Word is not present in dictionary\n......");
+            logger.info("Word is not present in dictionary\n......");
         }
     }
 
@@ -124,17 +137,18 @@ public class Dictionary {
     }
 
     public static void main(String args[]) {
+
         HashMap<String, String> dict = new HashMap<>();
 
         Scanner sc = new Scanner(System.in);
 
         boolean flag = true;
         while (flag) {
-            System.out.println("Enter 1 to insert in Dictionary");
-            System.out.println("Enter 2 to search in Dictionary");
-            System.out.println("Enter 3 to autocomplete ");
-            System.out.println("Enter 4 to autocorrect ");
-            System.out.println("Enter 5 to exit the dictionary");
+            logger.info("Enter 1 to insert in Dictionary");
+            logger.info("Enter 2 to search in Dictionary");
+            logger.info("Enter 3 to autocomplete ");
+            logger.info("Enter 4 to autocorrect ");
+            logger.info("Enter 5 to exit the dictionary");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -145,7 +159,7 @@ public class Dictionary {
                     System.out.println("Enter the meaning of word");
                     String meaning = sc.nextLine();
                     insert(dict, word, meaning);
-                    System.out.println("Word and meaning is inserted in dictionary\n.......");
+                    logger.info("Word and meaning is inserted in dictionary\n.......");
                     break;
                 case 2:
                     System.out.println("Enter the word for which we want meaning");
@@ -155,7 +169,7 @@ public class Dictionary {
                 case 3:
                     System.out.println("Enter the word to be auto completed");
                     String incompleteWord = sc.next();
-                    System.out.println("Complete words " +
+                    logger.info("Complete words " +
                             "  " + autocomplete(dict, incompleteWord));
                     System.out.println("\n");
 
@@ -164,7 +178,7 @@ public class Dictionary {
                 case 4:
                     System.out.println("Enter the word to be autocorrected");
                     String incorrectWord = sc.next();
-                    System.out.println("Autocorrected word " + autocorrect(dict, incorrectWord));
+                    logger.info("Autocorrected word " + autocorrect(dict, incorrectWord));
 
                     break;
                 case 5:
