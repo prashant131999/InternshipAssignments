@@ -144,11 +144,11 @@ public class Dictionary {
 
         boolean flag = true;
         while (flag) {
-            System.out.println("Enter 1 to insert in Dictionary");
-            System.out.println("Enter 2 to search in Dictionary");
-            System.out.println("Enter 3 to autocomplete ");
-            System.out.println("Enter 4 to autocorrect ");
-            System.out.println("Enter 5 to exit the dictionary");
+            logger.info("Enter 1 to insert in Dictionary");
+            logger.info("Enter 2 to search in Dictionary");
+            logger.info("Enter 3 to autocomplete ");
+            logger.info("Enter 4 to autocorrect ");
+            logger.info("Enter 5 to exit the dictionary");
             int choice = sc.nextInt();
 
             switch (choice) {
