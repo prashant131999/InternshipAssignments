@@ -15,11 +15,7 @@ public class Dictionary {
     static {
            LogManager manager = LogManager.getLogManager();
            InputStream stream = Dictionary.class.getClassLoader().getResourceAsStream("logging.properties");
-           try {
-               manager.readConfiguration(stream);
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
+
        }
     /**
      * This method insert the word with their meaning in dictionary
