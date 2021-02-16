@@ -11,12 +11,16 @@ import java.util.logging.Logger;
 
 
 public class Dictionary {
-    static Logger logger = Logger.getLogger(Dictionary.class.getPackage().getName());
-    static {
-           LogManager manager = LogManager.getLogManager();
-           InputStream stream = Dictionary.class.getClassLoader().getResourceAsStream("logging.properties");
+    private static Logger logger;
+    private final static Scanner scan = new Scanner(System.in);
 
-       }
+    static {
+        System.setProperty("java.util.logging.config.file",
+                "/home/raramuri/Desktop/intern/InternshipAssignments/src/main/resources/logging.properties");
+
+        logger = java.util.logging.Logger.getLogger(Dictionary.class.getName());
+
+    }
     /**
      * This method insert the word with their meaning in dictionary
      *
@@ -140,11 +144,11 @@ public class Dictionary {
 
         boolean flag = true;
         while (flag) {
-            logger.info("Enter 1 to insert in Dictionary");
-            logger.info("Enter 2 to search in Dictionary");
-            logger.info("Enter 3 to autocomplete ");
-            logger.info("Enter 4 to autocorrect ");
-            logger.info("Enter 5 to exit the dictionary");
+            System.out.println("Enter 1 to insert in Dictionary");
+            System.out.println("Enter 2 to search in Dictionary");
+            System.out.println("Enter 3 to autocomplete ");
+            System.out.println("Enter 4 to autocorrect ");
+            System.out.println("Enter 5 to exit the dictionary");
             int choice = sc.nextInt();
 
             switch (choice) {
